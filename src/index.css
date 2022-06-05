@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* CALENDARIO - Start */
+.rbc-toolbar button{
+    color: white !important;
+    background-color: #3174ad !important;
+}
+.rbc-today {
+    background-color: #eaf6ff6e !important;
+}
+.rbc-off-range-bg{
+    background-color: #eaf6ff6e !important;
+}
+/* CALENDARIO - End */
+
+.none {
+    display: none !important;
+}
