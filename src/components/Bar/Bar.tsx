@@ -15,6 +15,7 @@ import {
     Switch,
 } from "@material-ui/core";
 import { useStyles } from "../../hook/useStyles";
+import { ArrowBack } from '@material-ui/icons';
 
 interface BarProp {
     open: boolean;
@@ -22,6 +23,7 @@ interface BarProp {
     notificationNumber?: number;
     darkState: boolean;
     handleThemeChange: () => void;
+    locationPathname?: string
 }
 
 const Bar: React.FC<BarProp> = ({
@@ -29,7 +31,7 @@ const Bar: React.FC<BarProp> = ({
     handleDrawerOpen,
     notificationNumber,
     darkState,
-    handleThemeChange,
+    handleThemeChange
 }) => {
     const theme = useTheme();
     const classes = useStyles(theme);
@@ -51,6 +53,15 @@ const Bar: React.FC<BarProp> = ({
                 >
                     <MenuIcon />
                 </IconButton>
+                <IconButton
+                    edge="start"
+                    color="secondary"
+                    aria-label="Nav Back"
+                    onClick={() => { window.history.go(-1) }}
+                    className={clsx(classes.menuButton)}
+                >
+                    <ArrowBack />
+                </IconButton>
                 <Typography
                     component="h1"
                     variant="h6"
@@ -58,6 +69,7 @@ const Bar: React.FC<BarProp> = ({
                     noWrap
                     className={classes.title}
                 >
+
                     Gestione Spedizioni
                 </Typography>
                 <Switch

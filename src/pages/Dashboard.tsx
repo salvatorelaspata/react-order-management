@@ -9,6 +9,7 @@ import { DynamicTable } from '../components/Table/DynamicTable';
 
 import { useSnapshot } from 'valtio'
 import { actions, state } from '../store/spedizioni';
+import { ImageButton } from '../components/Input/ImageButton';
 interface DashboardProps {
     darkState: boolean;
     handleThemeChange: () => void;
@@ -41,6 +42,9 @@ const Dashboard: React.FC<DashboardProps> = ({
     return (
         <>
             <StandardContainer>
+                <Grid item xs={12}>
+                    <ImageButton />
+                </Grid>
                 <Grid item xs={12} md={8} lg={9}>
                     <Paper className={fixedHeightPaper}>
                         <DashboardChart />
