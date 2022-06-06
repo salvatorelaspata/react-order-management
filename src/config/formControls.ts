@@ -1,6 +1,6 @@
 import moment from 'moment';
-
-export const aFormControls = [
+import { IFormControl } from '../types';
+export const aFormControls: IFormControl[] = [
     { id: "7d96fedb-b9e2-44b4-99ef-31a9690e88e8", property: "Data_Partenza", label: "Data Partenza", type: "date", initialValue: moment(), formula: "(date)" },
     { id: "8f297dca-c1cc-4319-82ba-4d91bd1158bf", property: "Prodotto", label: "Prodotto", type: "text", initialValue: "", formula: "(string - Creare Anagrafica ad hoc?)" },
     { id: "02ea5128-4d73-4f42-924e-f5c17aa7576f", property: "Tipo_Collo", label: "Tipo Collo", type: "select", options: [{ key: "opt1", value: "Opzione 1" }, { key: "opt2", value: "Opzione 2" }], initialValue: "", formula: "(string - Creare Base Dati ad hoc?)" },
@@ -29,7 +29,7 @@ console.log(oInitialFormControls);
 /**
  * MOCK DATA
  */
-function _makeid(length: number) {
+export const _makeid = (length: number) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     var charactersLength = characters.length;
@@ -38,7 +38,7 @@ function _makeid(length: number) {
     }
     return result;
 }
-function _mockData(type: string) {
+export const _mockData = (type: string) => {
     if (type === 'text')
         return _makeid(10)
     else if (type === 'number')
@@ -52,7 +52,7 @@ function _mockData(type: string) {
 export const _mockFormControls = (aMockControls: any) =>
     aMockControls.reduce((o: any, obj: any) => Object.assign(o, { [obj.property]: _mockData(obj.type) }), {});
 export const aMockCopy =
-    Array.from({ length: 30 }, () => Object.assign({ id: _makeid(30) }, _mockFormControls(aFormControls)))
+    Array.from({ length: 15 }, () => Object.assign({ id: _makeid(30) }, _mockFormControls(aFormControls)))
 export const aMockTableControls =
     aMockCopy.map(object => ({ ...object }))
 console.log(_mockFormControls, aMockTableControls)

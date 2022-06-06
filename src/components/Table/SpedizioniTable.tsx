@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import { TitlePanel } from '../Title/TitlePanel';
 import { useHistory } from 'react-router-dom';
 import { useStyles } from '../../hook/useStyles';
-import { aFormControls, aMockTableControls } from '../../config/aFormControls';
+import { aFormControls, aMockTableControls } from '../../config/formControls';
 import moment from 'moment';
 // import DynamicFormControl from '../Input/DynamicFormControl';
 

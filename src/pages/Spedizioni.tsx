@@ -9,7 +9,7 @@ import { DynamicTable } from '../components/Table/DynamicTable';
 import { actions, state } from '../store/spedizioni';
 import { actions as actionsSpedizione } from '../store/spedizione';
 import { useSnapshot } from 'valtio'
-import { oInitialFormControls } from '../config/aFormControls'
+import { oInitialFormControls } from '../config/formControls'
 export const Spedizioni: React.FC = () => {
     const classes = useStyles();
     const history = useHistory();

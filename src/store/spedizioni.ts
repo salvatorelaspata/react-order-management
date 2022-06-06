@@ -1,6 +1,6 @@
 import { proxy } from 'valtio'
 import { devtools } from 'valtio/utils'
-import { aFormControls, aMockTableControls } from '../config/aFormControls'
+import { aFormControls, aMockTableControls } from '../config/formControls'
 
 export const state = proxy<{ list: any[], controls: any[] }>({ list: [], controls: [] })
 export const actions = {

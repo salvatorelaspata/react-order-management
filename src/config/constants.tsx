@@ -11,6 +11,7 @@ import { Fornitori } from '../pages/Fornitori';
 import { Clienti } from '../pages/Clienti';
 import { DettaglioSpedizione } from '../pages/DettaglioSpedizione';
 import Anagrafiche from '../pages/Anagrafiche';
+import { MenuItem } from '../types';
 
 /**
  * 
@@ -21,7 +22,7 @@ import Anagrafiche from '../pages/Anagrafiche';
 export const ITEMS_MENU = (
     darkState: boolean,
     handleThemeChange: () => void
-): any[] => [
+): MenuItem[] => [
         {
             id: "ccdeef55-2404-46a8-816f-8c911d55019f",
             icon: <DashboardIcon />,

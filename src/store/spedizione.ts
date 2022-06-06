@@ -1,7 +1,7 @@
 import moment from 'moment'
 import { proxy, useSnapshot } from 'valtio'
 import { devtools } from 'valtio/utils'
-import { oInitialFormControls } from '../config/aFormControls'
+import { oInitialFormControls } from '../config/formControls'
 import { state as spedizioniState } from './spedizioni'
 
 export const state = proxy<any>({ current: oInitialFormControls })
