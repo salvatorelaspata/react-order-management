@@ -33,7 +33,10 @@ export const actions = {
         console.log(aTipoCassa)
         state['tipoCassa'].controls = aTipoCassaProperties
         console.log(aTipoCassaProperties)
-    }
+    },
+    // setCurrent: (obj) => {
+    //     state.current = obj;
+    // }
 }
 
 devtools(state, { name: 'SPEDIZIONI', enabled: true })
