@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
-import clsx from "clsx";
+// import clsx from "clsx";
+// import { useStyles } from "../../hook/useStyles";
 import { useMediaQuery, useTheme } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -8,8 +9,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 import CreateIcon from "@material-ui/icons/Create";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { useStyles } from "../../hook/useStyles";
 import DynamicFormControl from '../Input/DynamicFormControl';
+import { useSnapshot } from 'valtio';
+import { stateAnagrafica } from '../../store/anagrafiche';
 
 interface FormProps {
     open: boolean;
@@ -32,8 +34,9 @@ const AnagraficaDialog: React.FC<FormProps> = ({
     controls
 }) => {
     const theme = useTheme();
-    const classes = useStyles(theme);
+    // const classes = useStyles(theme);
     const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+    const snapAnagrafica = useSnapshot(stateAnagrafica)
 
     return (
         <Dialog
@@ -54,7 +57,7 @@ const AnagraficaDialog: React.FC<FormProps> = ({
                 {title}
             </DialogTitle>
             <DialogContent>
-                {controls && controls.map((control: any) => (<DynamicFormControl key={control.id} {...control} isDisable={false} handleChange={() => { }} handleChangeDate={() => { }} value="" />))}
+                {controls && controls.map((control: any) => (<DynamicFormControl key={control.id} {...control} isDisable={false} handleChange={() => { }} handleChangeDate={() => { }} value={snapAnagrafica[control.property]} />))}
             </DialogContent>
             <DialogActions>
                 <>

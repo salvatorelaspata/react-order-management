@@ -7,7 +7,7 @@ import AddIcon from "@material-ui/icons/Add";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { useTodo } from "../hook/useTodo";
 import { ToDoProp } from "../hook/types";
-import AddToDoDialog from "../components/Dialog/AddToDoDialog";
+import AddToDoDialog from "../components/Dialogs/AddToDoDialog";
 
 const grid = 8;
 const getListStyle = (isDraggingOver: boolean) => ({

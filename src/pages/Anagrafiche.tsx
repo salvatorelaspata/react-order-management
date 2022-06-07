@@ -4,10 +4,11 @@ import clsx from "clsx";
 import StandardContainer from '../components/layout/StandardContainer';
 import { useStyles } from '../hook/useStyles';
 import { DynamicTable } from '../components/Table/DynamicTable';
-import { actions, state } from '../store/anagrafiche';
+import { actionsAnagrafica, state } from '../store/anagrafiche';
 import { useSnapshot } from 'valtio';
-import AnagraficaDialog from '../components/Dialog/AnagraficaDialog';
+import AnagraficaDialog from '../components/Dialogs/AnagraficaDialog';
 import Add from '@material-ui/icons/Add';
+import { TAnagrafiche } from '../types';
 
 
 const Anagrafiche: React.FC = () => {
@@ -17,29 +18,21 @@ const Anagrafiche: React.FC = () => {
     const [stateControls, setStateControls] = useState<any[]>();;
     const { paper, fabContainer, fabPaperMargin } = useStyles();
     const snap = useSnapshot(state)
-    useEffect(() => {
-        actions.fetchFornitori();
-        actions.fetchClienti();
-        actions.fetchTipoCollo();
-        actions.fetchTipoCassa();
-    }, []);
+    useEffect(() => { }, []);
 
-    // alert(JSON.stringify(snap.fornitori))
-    // alert(JSON.stringify(snap.clienti))
-    // alert(JSON.stringify(snap.tipoCollo))
-    // alert(JSON.stringify(snap.tipoCassa))
 
     const onClickRow = (row: any, controls: any) => {
         setIsNew(false)
-        console.log(row)
         setStateControls(controls)
+        actionsAnagrafica.setAnagrafica(row)
         setOpen(true);
     }
 
-    const onCreate = (controls: any, who: string) => {
+    const onCreate = (controls: any, who: TAnagrafiche) => {
         setIsNew(true);
         setWho(`${who.charAt(0).toUpperCase()}${who.slice(1)}`);
         setStateControls(controls)
+        actionsAnagrafica.setAnagrafica(state[who].initialState)
         setOpen(true);
     }
 
@@ -65,7 +58,7 @@ const Anagrafiche: React.FC = () => {
                 <Grid item xs={12} md={6} lg={6}>
                     <Paper className={clsx(paper, fabContainer)}>
                         <DynamicTable items={snap.fornitori ? snap.fornitori.list : []} properties={snap.fornitori ? snap.fornitori.controls : []} title="Fornitori" recent={false} onClickRow={(row) => onClickRow(row, snap.fornitori.controls)} />
-                        <Fab onClick={() => onCreate(snap.fornitori.controls, "Fornitori")} size="small" color="primary" className={fabPaperMargin}>
+                        <Fab onClick={() => onCreate(snap.fornitori.controls, 'fornitori')} size="small" color="primary" className={fabPaperMargin}>
                             <Add />
                         </Fab>
                     </Paper>
@@ -73,7 +66,7 @@ const Anagrafiche: React.FC = () => {
                 <Grid item xs={12} md={6} lg={6}>
                     <Paper className={clsx(paper, fabContainer)}>
                         <DynamicTable items={snap.clienti ? snap.clienti.list : []} properties={snap.clienti ? snap.clienti.controls : []} title="Clienti" recent={false} onClickRow={(row) => onClickRow(row, snap.clienti.controls)} />
-                        <Fab onClick={() => onCreate(snap.clienti.controls, 'Clienti')} size="small" color="primary" className={fabPaperMargin}>
+                        <Fab onClick={() => onCreate(snap.clienti.controls, 'clienti')} size="small" color="primary" className={fabPaperMargin}>
                             <Add />
                         </Fab>
                     </Paper>
@@ -83,7 +76,7 @@ const Anagrafiche: React.FC = () => {
                 <Grid item xs={12} md={6} lg={6}>
                     <Paper className={clsx(paper, fabContainer)}>
                         <DynamicTable items={snap.tipoCollo ? snap.tipoCollo.list : []} properties={snap.tipoCollo ? snap.tipoCollo.controls : []} title="Tipo Collo" recent={false} onClickRow={(row) => onClickRow(row, snap.tipoCollo.controls)} />
-                        <Fab onClick={() => onCreate(snap.tipoCollo.controls, 'Tipo Collo')} size="small" color="primary" className={fabPaperMargin}>
+                        <Fab onClick={() => onCreate(snap.tipoCollo.controls, 'tipoCollo')} size="small" color="primary" className={fabPaperMargin}>
                             <Add />
                         </Fab>
                     </Paper>
@@ -91,7 +84,7 @@ const Anagrafiche: React.FC = () => {
                 <Grid item xs={12} md={6} lg={6}>
                     <Paper className={clsx(paper, fabContainer)}>
                         <DynamicTable items={snap.tipoCassa ? snap.tipoCassa.list : []} properties={snap.tipoCassa ? snap.tipoCassa.controls : []} title="Tipo Cassa" recent={false} onClickRow={(row) => onClickRow(row, snap.tipoCassa.controls)} />
-                        <Fab onClick={() => onCreate(snap.tipoCassa.controls, 'Tipo Cassa')} size="small" color="primary" className={fabPaperMargin}>
+                        <Fab onClick={() => onCreate(snap.tipoCassa.controls, 'tipoCassa')} size="small" color="primary" className={fabPaperMargin}>
                             <Add />
                         </Fab>
                     </Paper>

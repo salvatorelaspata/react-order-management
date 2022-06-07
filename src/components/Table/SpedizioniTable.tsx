@@ -9,8 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import { TitlePanel } from '../Title/TitlePanel';
 import { useHistory } from 'react-router-dom';
 import { useStyles } from '../../hook/useStyles';
-import { aFormControls, aMockTableControls } from '../../config/formControls';
 import moment from 'moment';
+import { aSpedizioni, aSpedizioniControls } from '../../mock/spedizioni';
 // import DynamicFormControl from '../Input/DynamicFormControl';
 
 interface SpedizioniTableProp {
@@ -35,15 +35,15 @@ export const SpedizioniTable: React.FC<SpedizioniTableProp> = ({ title, recent, 
             <Table size="small">
                 <TableHead>
                     <TableRow>
-                        {aFormControls.map(({ id, label }) => (
+                        {aSpedizioniControls.map(({ id, label }) => (
                             <TableCell key={`table-head-id-${id}`}>{label}</TableCell>
                         ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {aMockTableControls && aMockTableControls.map((row: any) => (
+                    {aSpedizioni && aSpedizioni.map((row: any) => (
                         <TableRow key={row.id} onClick={() => onNavigateToDetail(row)}>
-                            {aFormControls.map(({ id, property }) => (
+                            {aSpedizioniControls.map(({ id, property }) => (
                                 <TableCell key={`table-row-id-${row.id}-${property}`}>
                                     {`${moment.isMoment(row[property]) ? row[property].format('DD/MM/YYYY') : row[property]}`}
                                 </TableCell>

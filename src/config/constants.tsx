@@ -13,12 +13,6 @@ import { DettaglioSpedizione } from '../pages/DettaglioSpedizione';
 import Anagrafiche from '../pages/Anagrafiche';
 import { MenuItem } from '../types';
 
-/**
- * 
- * @param darkState 
- * @param handleThemeChange 
- * @returns a list of routes
- */
 export const ITEMS_MENU = (
     darkState: boolean,
     handleThemeChange: () => void

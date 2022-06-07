@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Grid, Paper } from "@material-ui/core";
 import clsx from "clsx";
-import { DashboardChart } from '../components/Chart/DashboardChart';
+import { DashboardChart } from '../components/ReCharts/DashboardChart';
 import { Deposits } from '../components/Deposits/Deposits';
 import StandardContainer from '../components/layout/StandardContainer';
 import { useStyles } from '../hook/useStyles';

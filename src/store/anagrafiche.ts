@@ -1,42 +1,25 @@
 import { proxy } from 'valtio'
 import { devtools } from 'valtio/utils'
-import { aClienti, aClientiProperties, aFornitori, aFornitoriProperties, aTipoCassa, aTipoCassaProperties, aTipoCollo, aTipoColloProperties } from '../config/anagrafiche'
+import { aClienti, aClientiProperties, aFornitori, aFornitoriProperties, aTipoCassa, aTipoCassaProperties, aTipoCollo, aTipoColloProperties, oInitialClienti, oInitialFornitori, oInitialTipoCassa, oInitialTipoCollo } from '../mock/anagrafiche'
 import { IFormControl, TAnagrafiche } from '../types'
 
-export const state = proxy<{ [key in TAnagrafiche]: { list: any[], controls: IFormControl[] } }>({
-    fornitori: { list: [], controls: [] },
-    clienti: { list: [], controls: [] },
-    tipoCollo: { list: [], controls: [] },
-    tipoCassa: { list: [], controls: [] }
+export const state = proxy<{ [key in TAnagrafiche]: { label: string, list: any[], controls: IFormControl[], initialState: any } }>({
+    fornitori: { label: 'Fornitori', list: aFornitori, controls: aFornitoriProperties, initialState: oInitialFornitori },
+    clienti: { label: 'Clienti', list: aClienti, controls: aClientiProperties, initialState: oInitialClienti },
+    tipoCollo: { label: 'Tipo Collo', list: aTipoCollo, controls: aTipoColloProperties, initialState: oInitialTipoCollo },
+    tipoCassa: { label: 'Tipo Cassa', list: aTipoCassa, controls: aTipoCassaProperties, initialState: oInitialTipoCassa }
 })
-export const actions = {
-    fetchFornitori: () => {
-        state['fornitori'].list = aFornitori
-        console.log(aFornitori)
-        state['fornitori'].controls = aFornitoriProperties
-        console.log(aFornitoriProperties)
-    },
-    fetchClienti: () => {
-        state['clienti'].list = aClienti
-        console.log(aClienti)
-        state['clienti'].controls = aClientiProperties
-        console.log(aClientiProperties)
-    },
-    fetchTipoCollo: () => {
-        state['tipoCollo'].list = aTipoCollo
-        console.log(aTipoCollo)
-        state['tipoCollo'].controls = aTipoColloProperties
-        console.log(aTipoColloProperties)
-    },
-    fetchTipoCassa: () => {
-        state['tipoCassa'].list = aTipoCassa
-        console.log(aTipoCassa)
-        state['tipoCassa'].controls = aTipoCassaProperties
-        console.log(aTipoCassaProperties)
-    },
-    // setCurrent: (obj) => {
-    //     state.current = obj;
-    // }
-}
 
-devtools(state, { name: 'SPEDIZIONI', enabled: true })
+export const actions = {
+    fetchFornitori: async () => { },
+    fetchClienti: async () => { },
+    fetchTipoCollo: async () => { },
+    fetchTipoCassa: async () => { }
+}
+export const stateAnagrafica = proxy<any>({})
+export const actionsAnagrafica = {
+    setAnagrafica: (anagrafica: any) => {
+        Object.assign(stateAnagrafica, { ...anagrafica })
+    }
+}
+devtools(state, { name: 'ANAGRAFICHE', enabled: true })

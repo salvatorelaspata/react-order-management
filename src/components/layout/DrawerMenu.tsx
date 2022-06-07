@@ -3,7 +3,7 @@ import { Divider, Drawer, IconButton, List, useTheme } from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { useStyles } from "../../hook/useStyles";
 import { ITEMS_MENU } from "../../config/constants";
-import ListItemLink from "./ListItemLink";
+import DrawerMenuListItem from "./DrawerMenuListItem";
 
 interface DrawerMenuProp {
     open: boolean;
@@ -35,7 +35,7 @@ const DrawerMenu: React.FC<DrawerMenuProp> = ({ open, handleDrawerClose }) => {
                 <List>
                     {ITEMS_MENU(false, () => { }).map((item) => {
                         return (
-                            <ListItemLink
+                            <DrawerMenuListItem
                                 to={item.path}
                                 primary={item.text}
                                 icon={item.icon}

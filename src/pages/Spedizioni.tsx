@@ -9,7 +9,7 @@ import { DynamicTable } from '../components/Table/DynamicTable';
 import { actions, state } from '../store/spedizioni';
 import { actions as actionsSpedizione } from '../store/spedizione';
 import { useSnapshot } from 'valtio'
-import { oInitialFormControls } from '../config/formControls'
+import { oInitialSpedizioniControls } from '../mock/spedizioni';
 export const Spedizioni: React.FC = () => {
     const classes = useStyles();
     const history = useHistory();
@@ -20,7 +20,7 @@ export const Spedizioni: React.FC = () => {
     }, []);
 
     const navigateToCreate = () => {
-        actionsSpedizione.setSpedizione(oInitialFormControls)
+        actionsSpedizione.setSpedizione(oInitialSpedizioniControls)
         history.push({
             pathname: '/spedizione/new',
             // search: '?id=' + row.id,

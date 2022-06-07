@@ -8,7 +8,7 @@ import {
 import { Omit } from "@material-ui/types";
 import clsx from 'clsx';
 
-interface ListItemLinkProps {
+interface DrawerMenuListItemProps {
     icon?: React.ReactElement;
     primary: string;
     to: string;
@@ -16,7 +16,7 @@ interface ListItemLinkProps {
     drawerVisible?: boolean;
 }
 
-function ListItemLink(props: ListItemLinkProps) {
+function DrawerMenuListItem(props: DrawerMenuListItemProps) {
     const location = useLocation();
     const { icon, primary, to, disabled, drawerVisible } = props;
 
@@ -43,4 +43,4 @@ function ListItemLink(props: ListItemLinkProps) {
         </li>
     );
 }
-export default ListItemLink;
+export default DrawerMenuListItem;

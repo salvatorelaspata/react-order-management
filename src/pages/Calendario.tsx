@@ -8,7 +8,7 @@ import {
     View,
 } from "react-big-calendar";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-import AddEventDialog from "../components/Dialog/AddEventDialog";
+import AddEventDialog from "../components/Dialogs/AddEventDialog";
 
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";

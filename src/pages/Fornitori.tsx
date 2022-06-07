@@ -4,13 +4,16 @@ import React from "react";
 import StandardContainer from "../components/layout/StandardContainer";
 import AddIcon from "@material-ui/icons/Add";
 import { useStyles } from '../hook/useStyles';
+import { DynamicDataGrid } from '../components/Table/DynamicDataGrid';
 
 export const Fornitori: React.FC = () => {
     const classes = useStyles();
     return (
         <StandardContainer>
             <Grid item xs={12} md={12} lg={12}>
-                <Paper className={clsx(classes.paper)}>Fornitori</Paper>
+                <Paper className={clsx(classes.paper)}>
+                    <DynamicDataGrid />
+                </Paper>
             </Grid>
             <Fab
                 size="medium"

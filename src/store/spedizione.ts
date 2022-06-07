@@ -1,10 +1,10 @@
 import moment from 'moment'
 import { proxy, useSnapshot } from 'valtio'
 import { devtools } from 'valtio/utils'
-import { oInitialFormControls } from '../config/formControls'
+import { oInitialSpedizioniControls } from '../mock/spedizioni'
 import { state as spedizioniState } from './spedizioni'
 
-export const state = proxy<any>({ current: oInitialFormControls })
+export const state = proxy<any>({ current: oInitialSpedizioniControls })
 
 export const actions = {
     getSpedizioneById(id: string) {
