@@ -93,6 +93,15 @@ export const useStyles = makeStyles(
         none: {
             display: "none",
         },
+        fabContainer: {
+            position: "relative"
+        },
+        fabPaperMargin: {
+            position: "absolute",
+            right: theme.spacing(1),
+            top: theme.spacing(1),
+            margin: theme.spacing(1),
+        },
         fabMargin: {
             position: "absolute",
             bottom: theme.spacing(5),

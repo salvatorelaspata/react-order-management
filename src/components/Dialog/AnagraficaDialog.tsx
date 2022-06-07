@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import CreateIcon from "@material-ui/icons/Create";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useStyles } from "../../hook/useStyles";
+import DynamicFormControl from '../Input/DynamicFormControl';
 
 interface FormProps {
     open: boolean;
@@ -18,6 +19,7 @@ interface FormProps {
     onSave: (obj: any) => void;
     onDelete: (obj: any) => void;
     onUpdate: (obj: any) => void;
+    controls?: readonly any[];
 }
 
 const AnagraficaDialog: React.FC<FormProps> = ({
@@ -26,7 +28,8 @@ const AnagraficaDialog: React.FC<FormProps> = ({
     isNew,
     onSave,
     onDelete,
-    onUpdate
+    onUpdate,
+    controls
 }) => {
     const theme = useTheme();
     const classes = useStyles(theme);
@@ -51,18 +54,20 @@ const AnagraficaDialog: React.FC<FormProps> = ({
                 {title}
             </DialogTitle>
             <DialogContent>
+                {controls && controls.map((control: any) => (<DynamicFormControl key={control.id} {...control} isDisable={false} handleChange={() => { }} handleChangeDate={() => { }} value="" />))}
             </DialogContent>
             <DialogActions>
                 <>
-                    <div>
-                        <Button onClick={onSave}>
-                            <CreateIcon />
-                        </Button>
+                    {!isNew &&
+                        <div>
+                            <Button onClick={onSave}>
+                                <CreateIcon />
+                            </Button>
 
-                        <Button onClick={onDelete}>
-                            <DeleteIcon />
-                        </Button>
-                    </div>
+                            <Button onClick={onDelete}>
+                                <DeleteIcon />
+                            </Button>
+                        </div>}
                     <div>
                         <Button
                             onClick={() => {
@@ -71,11 +76,10 @@ const AnagraficaDialog: React.FC<FormProps> = ({
                                     : onUpdate({});
                             }}
                             color="primary"
-                            className={clsx(!isNew && classes.none)}
                         >
-                            Salva
+                            {isNew ? `Salva` : `Aggiorna`}
                         </Button>
-                        <Button onClick={() => setOpen(false)} color="primary">
+                        <Button onClick={() => setOpen(false)} color="secondary">
                             Chiudi
                         </Button>
                     </div>
