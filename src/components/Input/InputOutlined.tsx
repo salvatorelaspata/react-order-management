@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControl, TextField, useTheme } from "@material-ui/core";
+import { FormControl, TextField, useTheme } from "@mui/material";
 import { useStyles } from '../../hook/useStyles';
 
 interface InputOtlinedProp {

@@ -1,13 +1,13 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import clsx from "clsx";
-import { Grid, useMediaQuery, useTheme } from "@material-ui/core";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Button from "@material-ui/core/Button";
-import CreateIcon from "@material-ui/icons/Create";
-import DeleteIcon from "@material-ui/icons/Delete";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
+import CreateIcon from "@mui/icons-material/Create";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { initialToDo, mockOptions, ToDoProp } from "../../hook/types";
 import { useStyles } from "../../hook/useStyles";
 import InputOutlined from "../Input/InputOutlined";
@@ -63,7 +63,7 @@ const AddToDoDialog: React.FC<FormProps> = ({
             </DialogTitle>
 
             <DialogContent>
-                <Grid container justify="space-around">
+                <Grid container justifyContent="space-around">
                     <SelectOutlined
                         id="39df8474-5a13-453d-b265-789b3d2f5e6b"
                         value={currentToDo.state || ""}

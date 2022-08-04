@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid, Paper } from "@mui/material";
 import clsx from "clsx";
 import { DashboardChart } from '../components/ReCharts/DashboardChart';
 import { Deposits } from '../components/Deposits/Deposits';

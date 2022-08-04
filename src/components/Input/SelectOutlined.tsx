@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControl, InputLabel, Select, useTheme, MenuItem } from "@material-ui/core";
+import { FormControl, InputLabel, Select, useTheme, MenuItem } from "@mui/material";
 
 import clsx from "clsx";
 import { useStyles } from "../../hook/useStyles";

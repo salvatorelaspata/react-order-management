@@ -1,8 +1,8 @@
-import { Fab, Grid, Paper } from "@material-ui/core";
+import { Fab, Grid, Paper } from "@mui/material";
 import clsx from "clsx";
 import React, { useEffect } from "react";
 import StandardContainer from "../components/layout/StandardContainer";
-import AddIcon from "@material-ui/icons/Add";
+import AddIcon from "@mui/icons-material/Add";
 import { useHistory } from 'react-router-dom';
 import { useStyles } from '../hook/useStyles';
 import { DynamicTable } from '../components/Table/DynamicTable';

@@ -1,8 +1,8 @@
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import PeopleIcon from "@material-ui/icons/People";
-import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
-// import ShowChartIcon from '@material-ui/icons/ShowChart';
-import { ShowChart as ShowChartIcon, CalendarToday, InvertColorsRounded, ShoppingCart, CreateNewFolderSharp, People } from '@material-ui/icons';
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import PeopleIcon from "@mui/icons-material/People";
+import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
+// import ShowChartIcon from '@mui/icons-material/ShowChart';
+import { ShowChart as ShowChartIcon, CalendarToday, InvertColorsRounded, ShoppingCart, CreateNewFolderSharp, People } from '@mui/icons-material';
 
 import { Calendario } from '../pages/Calendario';
 import ToDo from "../pages/ToDo";

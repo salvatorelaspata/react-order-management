@@ -28,3 +28,7 @@ code {
 .none {
     display: none !important;
 }
+
+.root {
+    display: "flex";
+}

@@ -1,9 +1,11 @@
 import React from "react";
-import {
-    MuiPickersUtilsProvider,
-    KeyboardDatePicker,
-} from '@material-ui/pickers';
-import MomentUtils from '@date-io/moment';
+// import {
+//     MuiPickersUtilsProvider,
+//     KeyboardDatePicker,
+// } from '@material-ui/pickers';
+// import MomentUtils from '@date-io/moment';
+import { DatePicker } from '@mui/x-date-pickers';
+import { TextField } from '@mui/material';
 interface InputOtlinedProp {
     id: string;
     label: string;
@@ -24,30 +26,37 @@ const DateInput: React.FC<InputOtlinedProp> = ({
     disabled,
     fullWidth = true
 }) => {
-    const onChangeDatePicker = (e: any) => {
+    const onChangeDatePicker = (value: any, keyboardInputValue?: string | undefined) => {
         debugger;
-        handleChange(e, name);
+        handleChange(value, name);
     };
     return (
-        <MuiPickersUtilsProvider utils={MomentUtils}>
-            <KeyboardDatePicker
-                disableToolbar
-                autoOk={true}
-                variant="inline"
-                format="DD/MM/YYYY"
-                margin="normal"
-                id={id}
-                fullWidth={fullWidth}
-                name={name}
-                label={label}
-                value={value}
-                onChange={onChangeDatePicker}
-                disabled={disabled}
-                KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                }}
-            />
-        </MuiPickersUtilsProvider>
+        <DatePicker
+            label={label}
+            inputFormat="DD/MM/YYYY"
+            value={value}
+            onChange={onChangeDatePicker}
+            renderInput={(params: any) => <TextField {...params} />}
+        />
+        // <MuiPickersUtilsProvider utils={MomentUtils}>
+        //     <KeyboardDatePicker
+        //         disableToolbar
+        //         autoOk={true}
+        //         variant="inline"
+        //         format="DD/MM/YYYY"
+        //         margin="normal"
+        //         id={id}
+        //         fullWidth={fullWidth}
+        //         name={name}
+        //         label={label}
+        //         value={value}
+        //         onChange={onChangeDatePicker}
+        //         disabled={disabled}
+        //         KeyboardButtonProps={{
+        //             'aria-label': 'change date',
+        //         }}
+        //     />
+        // </MuiPickersUtilsProvider>
     );
 };
 

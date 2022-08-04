@@ -1,11 +1,10 @@
 import React from "react";
-import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import {
     Link as RouterLink,
     LinkProps as RouterLinkProps,
     useLocation,
 } from "react-router-dom";
-import { Omit } from "@material-ui/types";
 import clsx from 'clsx';
 
 interface DrawerMenuListItemProps {

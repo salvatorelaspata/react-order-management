@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Button, Grid, Paper } from '@material-ui/core';
+import { Button, Grid, Paper } from '@mui/material';
 import DynamicFormControl from '../components/Input/DynamicFormControl';
 import StandardContainer from '../components/layout/StandardContainer';
 import { TitlePanel } from '../components/Title/TitlePanel';
 import { useStyles } from '../hook/useStyles';
 import clsx from "clsx";
 import Footer from '../components/layout/Footer';
-import { green, red } from '@material-ui/core/colors';
+import { green, red } from '@mui/material/colors';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Cancel, Save } from '@material-ui/icons';
+import { Cancel, Save } from '@mui/icons-material';
 import { actions, state } from '../store/spedizione';
 import { state as stateSpedizioni } from '../store/spedizioni';
 import { useSnapshot } from 'valtio'
@@ -48,7 +48,7 @@ export const DettaglioSpedizione: React.FC = () => {
                 <Grid item xs={12} md={12} lg={12}>
                     <Paper className={paperStyle}>
                         <TitlePanel>{location.pathname.indexOf('new') !== -1 ? 'Creazione' : 'Aggiornamento'}</TitlePanel>
-                        <Grid container justify='space-around'>
+                        <Grid container justifyContent='space-around'>
                             <Grid item xs={12} md={6} lg={6} style={{ padding: '1rem' }}>
                                 {snapSpedizioni.controls.slice(0, 10).map((control: any) => (<DynamicFormControl key={control.id} {...control} isDisable={isDisable} handleChange={actions.handleChange} handleChangeDate={actions.handleChangeDate} value={snap.current[control.property]} />))}
                             </Grid>

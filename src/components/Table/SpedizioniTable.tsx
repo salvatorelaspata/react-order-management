@@ -1,15 +1,16 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import Link from '@mui/material/Link';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import { v4 as uuidv4 } from 'uuid';
+import moment from 'moment';
 
 import { TitlePanel } from '../Title/TitlePanel';
 import { useHistory } from 'react-router-dom';
 import { useStyles } from '../../hook/useStyles';
-import moment from 'moment';
 import { aSpedizioni, aSpedizioniControls } from '../../mock/spedizioni';
 // import DynamicFormControl from '../Input/DynamicFormControl';
 
@@ -36,7 +37,7 @@ export const SpedizioniTable: React.FC<SpedizioniTableProp> = ({ title, recent, 
                 <TableHead>
                     <TableRow>
                         {aSpedizioniControls.map(({ id, label }) => (
-                            <TableCell key={`table-head-id-${id}`}>{label}</TableCell>
+                            <TableCell key={uuidv4()}>{label}</TableCell>
                         ))}
                     </TableRow>
                 </TableHead>
@@ -44,12 +45,12 @@ export const SpedizioniTable: React.FC<SpedizioniTableProp> = ({ title, recent, 
                     {aSpedizioni && aSpedizioni.map((row: any) => (
                         <TableRow key={row.id} onClick={() => onNavigateToDetail(row)}>
                             {aSpedizioniControls.map(({ id, property }) => (
-                                <TableCell key={`table-row-id-${row.id}-${property}`}>
+                                <TableCell key={uuidv4()}>
                                     {`${moment.isMoment(row[property]) ? row[property].format('DD/MM/YYYY') : row[property]}`}
                                 </TableCell>
                             ))}
                             {/* {aFormControls.map(({ id, property }) => (
-                                <TableCell key={`table-row-id-${id}`}>
+                                <TableCell key={`table - row - id - ${ id }`}>
                                     <DynamicFormControl key={row.id} {...row} isDisable={false} handleChange={() => null} handleChangeDate={() => null} value={row[property]} />
                                 </TableCell>
                             ))} */}

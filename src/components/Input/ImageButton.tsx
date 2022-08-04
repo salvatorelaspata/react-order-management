@@ -1,5 +1,5 @@
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
+import Typography from '@mui/material/Typography';
 import { useStyles } from '../../hook/useStyles';
 
 const images = [

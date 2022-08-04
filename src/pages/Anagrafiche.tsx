@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Fab, Grid, Paper } from "@material-ui/core";
+import { Fab, Grid, Paper } from "@mui/material";
 import clsx from "clsx";
 import StandardContainer from '../components/layout/StandardContainer';
 import { useStyles } from '../hook/useStyles';
@@ -7,7 +7,7 @@ import { DynamicTable } from '../components/Table/DynamicTable';
 import { actionsAnagrafica, state } from '../store/anagrafiche';
 import { useSnapshot } from 'valtio';
 import AnagraficaDialog from '../components/Dialogs/AnagraficaDialog';
-import Add from '@material-ui/icons/Add';
+import Add from '@mui/icons-material/Add';
 import { TAnagrafiche } from '../types';
 
 

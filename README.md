@@ -26,8 +26,8 @@ bootstrapped with [Create React App](https://github.com/facebook/create-react-ap
 
 # Material-UI
 
-### `npm i @material-ui/core`
+### `npm i @mui/material`
 
 ### `npm i @types/material-ui --save-dev`
 
-### `npm install @material-ui/icons`
+### `npm install @mui/icons-material`

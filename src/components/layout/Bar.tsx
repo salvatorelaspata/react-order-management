@@ -2,8 +2,8 @@ import React from "react";
 
 import clsx from "clsx";
 
-import MenuIcon from "@material-ui/icons/Menu";
-import NotificationsIcon from "@material-ui/icons/Notifications";
+import MenuIcon from "@mui/icons-material/Menu";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 import {
     AppBar,
@@ -13,9 +13,9 @@ import {
     Typography,
     useTheme,
     Switch,
-} from "@material-ui/core";
+} from "@mui/material";
 import { useStyles } from "../../hook/useStyles";
-import { ArrowBack } from '@material-ui/icons';
+import { ArrowBack } from '@mui/icons-material';
 
 interface BarProp {
     open: boolean;

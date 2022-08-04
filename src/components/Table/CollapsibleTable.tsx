@@ -1,17 +1,17 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Collapse from "@material-ui/core/Collapse";
-import IconButton from "@material-ui/core/IconButton";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import Box from "@mui/material/Box";
+import Collapse from "@mui/material/Collapse";
+import IconButton from "@mui/material/IconButton";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { makeStyles } from '@mui/styles';
 
 const useRowStyles = makeStyles({
     root: {
@@ -73,7 +73,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box margin={1}>
                             Orders History
-                     <Table size="small" aria-label="purchases">
+                            <Table size="small" aria-label="purchases">
                                 <TableHead>
                                     <TableRow>
                                         <TableCell>id</TableCell>
@@ -81,7 +81,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                                         <TableCell align="right">Amount</TableCell>
                                         <TableCell align="right">
                                             Total price ($)
-                              </TableCell>
+                                        </TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
